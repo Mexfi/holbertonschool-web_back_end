@@ -4,6 +4,11 @@
 from pymongo import MongoClient
 
 def main():
+    """Connects to the logs.nginx collection and prints statistics:
+       - total number of logs
+       - number of logs per HTTP method
+       - number of GET /status requests
+    """
     client = MongoClient('mongodb://127.0.0.1:27017')
     db = client.logs
     nginx = db.nginx
