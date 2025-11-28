@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""12-log_stats: Provides stats about Nginx logs in MongoDB"""
+"""12-log_stats: Display some stats about Nginx logs stored in MongoDB"""
 
 from pymongo import MongoClient
 
 def main():
     """Connects to the logs.nginx collection and prints statistics:
        - total number of logs
-       - number of logs per HTTP method
+       - number of logs per HTTP method (GET, POST, PUT, PATCH, DELETE)
        - number of GET /status requests
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
